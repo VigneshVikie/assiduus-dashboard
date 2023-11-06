@@ -11,11 +11,11 @@ const SideNav = () => {
     <div className="side-nav">
       <nav className="nav-bar">
         <div className="logo">
-          <img src={logo} alt />
+         <a href="/"> <img src={logo} alt /></a>
         </div>
         <ul className="nav-list">
           <li className="lists">
-            <a href="#">
+            <a href="/">
               <div className="list-icons">
                 <BiSolidDashboard />
               </div>
@@ -23,7 +23,7 @@ const SideNav = () => {
             </a>
           </li>
           <li className="lists">
-            <a href="#">
+            <a href="/">
               <div className="list-icons">
                 <IoMdWallet />
               </div>
@@ -31,7 +31,7 @@ const SideNav = () => {
             </a>
           </li>
           <li className="lists">
-            <a href="#">
+            <a href="/">
               <div className="list-icons">
                 <FaDollarSign />
               </div>
@@ -39,7 +39,7 @@ const SideNav = () => {
             </a>
           </li>
           <li className="lists">
-            <a href="#">
+            <a href="/">
               <div className="list-icons">
                 <IoDocumentText />
               </div>
@@ -47,7 +47,7 @@ const SideNav = () => {
             </a>
           </li>
           <li className="lists">
-            <a href="#">
+            <a href="/">
               <div className="list-icons">
                 <MdManageAccounts />
               </div>
@@ -55,7 +55,7 @@ const SideNav = () => {
             </a>
           </li>
           <li className="lists">
-            <a href="#">
+            <a href="/">
               <div className="list-icons">
                 <MdContacts />
               </div>

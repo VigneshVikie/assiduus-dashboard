@@ -41,7 +41,7 @@ const Cashflow = () => {
       .selectAll(".combined-bar")
       .data(data)
       .enter()
-      .append("g") // Create a group for each bar
+      .append("g") 
       .attr("class", "combined-bar")
       .attr("transform", (d) => `translate(${xScale(d.category)},0)`)
       .append("rect")
