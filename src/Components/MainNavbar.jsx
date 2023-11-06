@@ -1,6 +1,6 @@
 import React from "react";
 import { BsBellFill } from "react-icons/bs";
-import { ImSearch } from "react-icons/Im";
+import { ImSearch } from "react-icons/im";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import avatar from "../assets/avatar.png";
 
