@@ -3,11 +3,11 @@ import * as d3 from "d3";
 
 const Cashflow = () => {
   const [data] = useState([
-    { category: "August", inValue: 80, outValue: 20 },
-    { category: "September", inValue: 20, outValue: 10 },
-    { category: "October", inValue: 40, outValue: 30 },
-    { category: "November", inValue: 30, outValue: 20 },
-    { category: "December", inValue: 20, outValue: 10 },
+    { category: "August", inValue: 30, outValue: 10 },
+    { category: "September", inValue: 60, outValue: 30 },
+    { category: "October", inValue: 90, outValue: 50 },
+    { category: "November", inValue: 60, outValue: 20 },
+    { category: "December", inValue: 50, outValue: 10 },
     { category: "January", inValue: 100, outValue: 50 },
   ]);
 
