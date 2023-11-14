@@ -1,7 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-const CheckingAccount = ({ dataByMonth, setSelectedMonth, selectedMonth }) => {
+const CheckingAccount = ({
+  setManage,
+  dataByMonth,
+  setSelectedMonth,
+  selectedMonth,
+}) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -13,7 +18,7 @@ const CheckingAccount = ({ dataByMonth, setSelectedMonth, selectedMonth }) => {
       .attr("width", w)
       .attr("height", h)
       .style("background", "#fff")
-      .style("padding-right", "10px")
+      .style("padding-left", "20px")
       .style("border-radius", "6px");
 
     svg.selectAll("*").remove();
@@ -21,7 +26,7 @@ const CheckingAccount = ({ dataByMonth, setSelectedMonth, selectedMonth }) => {
     // Setting scaling
     const xScale = d3
       .scaleLinear()
-      .domain([0, dataByMonth.length - 1])
+      .domain([0, dataByMonth.length])
       .range([10, w]);
 
     const yScale = d3.scaleLinear().domain([-45, h]).range([h, 0]);
@@ -60,7 +65,7 @@ const CheckingAccount = ({ dataByMonth, setSelectedMonth, selectedMonth }) => {
       .attr("class", "line")
       .attr("fill", "none")
       .attr("stroke", "#02BB7D")
-      .style("stroke-width", 2)
+      .style("stroke-width", 3)
       .attr("stroke-dasharray", function () {
         const length = this.getTotalLength();
         return `${length} ${length}`;
@@ -77,14 +82,20 @@ const CheckingAccount = ({ dataByMonth, setSelectedMonth, selectedMonth }) => {
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
   };
+  const handleManageChange = (e) => {
+    setManage(e.target.value);
+  };
 
   return (
     <div className="checking-account chart-container">
       <div className="check-header">
         <h3>Checking account</h3>
         <div className="dropdown">
-          <select name="manage" id="manage">
+          <select name="manage" id="manage" onChange={handleManageChange}>
             <option value="manage">Manage</option>
+            <option value="set1">Early Month</option>
+            <option value="set2">Mid Month</option>
+            <option value="set3">End Month</option>
           </select>
           <select
             name="months"

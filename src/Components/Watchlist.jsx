@@ -1,6 +1,6 @@
 import React from "react";
 
-const Watchlist = () => {
+const Watchlist = ({ data }) => {
   return (
     <div className="watchlist chart-container">
       <div className="watchlist-header">
@@ -17,19 +17,19 @@ const Watchlist = () => {
         </div>
         <div className="wishlist-month">
           <h4>This Month</h4>
-          <p>1,194.58</p>
-          <p>6,879.02</p>
-          <p>4,692.26</p>
-          <p>0.00</p>
-          <p>4,652.10</p>
+          <p>{data[0].salesMonth}</p>
+          <p>{data[1].adsMonth}</p>
+          <p>{data[2].inventoryMonth}</p>
+          <p>{data[3].entertainmentMonth}</p>
+          <p>{data[4].productMonth}</p>
         </div>
         <div className="wishlist-ytd">
           <h4>YTD</h4>
-          <p>11,418.29</p>
-          <p>9,271.36</p>
-          <p>9,768.09</p>
-          <p>0.00</p>
-          <p>2,529.90</p>
+          <p>{data[0].salesYtd}</p>
+          <p>{data[1].adsYtd}</p>
+          <p>{data[2].inventoryYtd}</p>
+          <p>{data[3].entertainmentYtd}</p>
+          <p>{data[4].productYtd}</p>
         </div>
       </div>
     </div>

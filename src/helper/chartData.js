@@ -1,6 +1,10 @@
 const chartData = {
   jan: {
     checkingAccount: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100,120],
+    
     invoice: [
       { category: "Older", value: 60 },
       { category: "Jan 01-08", value: 20 },
@@ -17,9 +21,20 @@ const chartData = {
       { category: "December", inValue: 50, outValue: 10 },
       { category: "January", inValue: 100, outValue: 50 },
     ],
+    watchlist: [
+      { salesMonth: "1,197.58", salesYtd: "11,418.29" },
+      { adsMonth: "6,879.02", adsYtd: "9,271.36" },
+      { inventoryMonth: "4,692.26", inventoryYtd: "9,768.09" },
+      { entertainmentMonth: "0.00", entertainmentYtd: "0.00" },
+      { productMonth: "4,652.10", productYtd: "2,529.90" },
+    ],
   },
   feb: {
     checkingAccount: [80, 110, 130, 60, 70, 110, 30, 70, 80, 110],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90],
+
     invoice: [
       { category: "Older", value: 100 },
       { category: "Feb 01-08", value: 60 },
@@ -36,9 +51,20 @@ const chartData = {
       { category: "January", inValue: 70, outValue: 20 },
       { category: "February", inValue: 50, outValue: 10 },
     ],
+    watchlist: [
+      { salesMonth: "2,345.67", salesYtd: "15,678.90" },
+      { adsMonth: "8,765.43", adsYtd: "12,345.67" },
+      { inventoryMonth: "3,210.98", inventoryYtd: "7,654.32" },
+      { entertainmentMonth: "1,234.56", entertainmentYtd: "3,456.78" },
+      { productMonth: "5,432.10", productYtd: "9,876.54" },
+    ],
   },
   mar: {
     checkingAccount: [95, 125, 145, 75, 85, 125, 45, 85, 95, 125],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100,120],
+
     invoice: [
       { category: "Older", value: 80 },
       { category: "Mar 01-08", value: 40 },
@@ -55,9 +81,20 @@ const chartData = {
       { category: "February", inValue: 50, outValue: 25 },
       { category: "March", inValue: 40, outValue: 20 },
     ],
+    watchlist: [
+      { salesMonth: "3,456.78", salesYtd: "18,901.23" },
+      { adsMonth: "9,876.54", adsYtd: "15,432.10" },
+      { inventoryMonth: "2,109.87", inventoryYtd: "5,678.90" },
+      { entertainmentMonth: "2,345.67", entertainmentYtd: "4,567.89" },
+      { productMonth: "6,789.01", productYtd: "11,234.56" },
+    ],
   },
   apr: {
     checkingAccount: [70, 100, 120, 50, 60, 100, 30, 60, 70, 100],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100],
+
     invoice: [
       { category: "Older", value: 70 },
       { category: "Apr 01-08", value: 30 },
@@ -74,9 +111,20 @@ const chartData = {
       { category: "March", inValue: 40, outValue: 15 },
       { category: "April", inValue: 30, outValue: 10 },
     ],
+    watchlist: [
+      { salesMonth: "4,567.89", salesYtd: "20,123.45" },
+      { adsMonth: "7,654.32", adsYtd: "14,567.89" },
+      { inventoryMonth: "1,234.56", inventoryYtd: "3,210.98" },
+      { entertainmentMonth: "3,210.98", entertainmentYtd: "6,543.21" },
+      { productMonth: "7,890.12", productYtd: "13,456.78" },
+    ],
   },
   may: {
     checkingAccount: [75, 105, 125, 55, 65, 105, 35, 65, 75, 105],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100,120],
+
     invoice: [
       { category: "Older", value: 90 },
       { category: "May 01-08", value: 50 },
@@ -93,9 +141,20 @@ const chartData = {
       { category: "April", inValue: 25, outValue: 15 },
       { category: "May", inValue: 20, outValue: 10 },
     ],
+    watchlist: [
+      { salesMonth: "5,678.90", salesYtd: "22,345.67" },
+      { adsMonth: "5,432.10", adsYtd: "11,234.56" },
+      { inventoryMonth: "876.54", inventoryYtd: "2,345.67" },
+      { entertainmentMonth: "4,567.89", entertainmentYtd: "8,765.43" },
+      { productMonth: "8,901.23", productYtd: "15,678.90" },
+    ],
   },
   jun: {
     checkingAccount: [85, 115, 135, 65, 75, 115, 35, 75, 85, 115],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100],
+
     invoice: [
       { category: "Older", value: 50 },
       { category: "Jun 01-08", value: 25 },
@@ -112,9 +171,20 @@ const chartData = {
       { category: "May", inValue: 30, outValue: 10 },
       { category: "June", inValue: 20, outValue: 10 },
     ],
+    watchlist: [
+      { salesMonth: "9,012.34", salesYtd: "18,765.43" },
+      { adsMonth: "3,456.78", adsYtd: "6,789.01" },
+      { inventoryMonth: "12,345.67", inventoryYtd: "22,345.67" },
+      { entertainmentMonth: "8,901.23", entertainmentYtd: "15,678.90" },
+      { productMonth: "5,432.10", productYtd: "11,234.56" },
+    ],
   },
   jul: {
     checkingAccount: [55, 85, 105, 35, 45, 85, 15, 45, 55, 85],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100,120],
+
     invoice: [
       { category: "Older", value: 40 },
       { category: "Jul 01-08", value: 15 },
@@ -131,9 +201,20 @@ const chartData = {
       { category: "June", inValue: 30, outValue: 5 },
       { category: "July", inValue: 40, outValue: 15 },
     ],
+    watchlist: [
+      { salesMonth: "7,890.12", salesYtd: "13,456.78" },
+      { adsMonth: "2,345.67", adsYtd: "4,567.89" },
+      { inventoryMonth: "10,123.45", inventoryYtd: "18,901.23" },
+      { entertainmentMonth: "6,789.01", entertainmentYtd: "11,234.56" },
+      { productMonth: "4,567.89", productYtd: "8,765.43" },
+    ],
   },
   aug: {
     checkingAccount: [65, 95, 115, 45, 55, 95, 25, 55, 65, 95],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100, 80],
+
     invoice: [
       { category: "Older", value: 35 },
       { category: "Aug 01-08", value: 20 },
@@ -150,9 +231,20 @@ const chartData = {
       { category: "July", inValue: 15, outValue: 10 },
       { category: "August", inValue: 10, outValue: 5 },
     ],
+    watchlist: [
+      { salesMonth: "11,234.56", salesYtd: "20,123.45" },
+      { adsMonth: "1,234.56", adsYtd: "3,210.98" },
+      { inventoryMonth: "9,012.34", inventoryYtd: "16,789.01" },
+      { entertainmentMonth: "3,456.78", entertainmentYtd: "7,890.12" },
+      { productMonth: "12,345.67", productYtd: "22,345.67" },
+    ],
   },
   sep: {
     checkingAccount: [75, 105, 125, 55, 65, 105, 35, 65, 75, 105],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100],
+
     invoice: [
       { category: "Older", value: 25 },
       { category: "Sep 01-08", value: 15 },
@@ -169,9 +261,20 @@ const chartData = {
       { category: "August", inValue: 40, outValue: 5 },
       { category: "September", inValue: 65, outValue: 10 },
     ],
+    watchlist: [
+      { salesMonth: "8,901.23", salesYtd: "14,567.89" },
+      { adsMonth: "5,432.10", adsYtd: "11,234.56" },
+      { inventoryMonth: "876.54", inventoryYtd: "2,345.67" },
+      { entertainmentMonth: "6,789.01", entertainmentYtd: "11,234.56" },
+      { productMonth: "4,567.89", productYtd: "8,765.43" },
+    ],
   },
   oct: {
     checkingAccount: [80, 110, 130, 60, 70, 110, 30, 70, 80, 110],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100,120],
+
     invoice: [
       { category: "Older", value: 65 },
       { category: "Oct 01-08", value: 30 },
@@ -188,9 +291,20 @@ const chartData = {
       { category: "September", inValue: 55, outValue: 20 },
       { category: "October", inValue: 70, outValue: 30 },
     ],
+    watchlist: [
+      { salesMonth: "11,234.56", salesYtd: "20,123.45" },
+      { adsMonth: "1,234.56", adsYtd: "3,210.98" },
+      { inventoryMonth: "3,210.98", inventoryYtd: "6,543.21" },
+      { entertainmentMonth: "9,876.54", entertainmentYtd: "15,432.10" },
+      { productMonth: "5,678.90", productYtd: "10,987.65" },
+    ],
   },
   nov: {
     checkingAccount: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100],
+
     invoice: [
       { category: "Older", value: 20 },
       { category: "Nov 01-08", value: 35 },
@@ -207,9 +321,19 @@ const chartData = {
       { category: "October", inValue: 65, outValue: 20 },
       { category: "November", inValue: 45, outValue: 20 },
     ],
+    watchlist: [
+      { salesMonth: "7,654.32", salesYtd: "13,456.78" },
+      { adsMonth: "2,345.67", adsYtd: "5,678.90" },
+      { inventoryMonth: "4,567.89", inventoryYtd: "8,901.23" },
+      { entertainmentMonth: "11,234.56", entertainmentYtd: "18,765.43" },
+      { productMonth: "6,543.21", productYtd: "12,345.67" },
+    ],
   },
   dec: {
     checkingAccount: [70, 100, 120, 50, 60, 100, 30, 60, 70, 100],
+    set1: [90, 120, 140, 70, 80, 120, 40, 80, 90, 120],
+    set2: [10, 20, 100, 50, 30, 120, 40, 80, 90, 120],
+    set3: [30, 10, 40, 80, 40, 10, 40, 90, 60, 100,120],
     invoice: [
       { category: "Older", value: 10 },
       { category: "Dec 01-08", value: 50 },
@@ -225,6 +349,13 @@ const chartData = {
       { category: "October", inValue: 80, outValue: 30 },
       { category: "November", inValue: 90, outValue: 30 },
       { category: "December", inValue: 50, outValue: 20 },
+    ],
+    watchlist: [
+      { salesMonth: "9,012.34", salesYtd: "16,789.01" },
+      { adsMonth: "1,234.56", adsYtd: "3,210.98" },
+      { inventoryMonth: "8,901.23", inventoryYtd: "15,432.10" },
+      { entertainmentMonth: "5,678.90", entertainmentYtd: "10,987.65" },
+      { productMonth: "4,567.89", productYtd: "8,765.43" },
     ],
   },
 };

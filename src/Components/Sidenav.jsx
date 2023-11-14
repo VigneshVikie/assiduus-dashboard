@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { BiSolidDashboard } from "react-icons/bi";
+import { BiSolidDashboard,BiSolidUser  } from "react-icons/bi";
 import { IoMdWallet } from "react-icons/io";
 import { IoDocumentText } from "react-icons/io5";
 import { FaDollarSign } from "react-icons/fa";
-import { MdManageAccounts, MdContacts } from "react-icons/md";
+import { MdContacts } from "react-icons/md";
+
 
 const SideNav = () => {
   return (
@@ -17,7 +18,7 @@ const SideNav = () => {
         </div>
         <ul className="nav-list">
           <li className="lists">
-            <a to="/">
+            <a href="/">
               <div className="list-icons">
                 <BiSolidDashboard />
               </div>
@@ -51,7 +52,7 @@ const SideNav = () => {
           <li className="lists">
             <a href="/">
               <div className="list-icons">
-                <MdManageAccounts />
+              <BiSolidUser  />
               </div>
               <div className="list-links">Advisor</div>
             </a>
