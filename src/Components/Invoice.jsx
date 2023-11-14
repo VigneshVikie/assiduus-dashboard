@@ -34,17 +34,21 @@ const Invoice = ({data}) => {
   
     // Create the bars
     svg
-      .selectAll("rect")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("x", (d) => xScale(d.category))
-      .attr("y", (d) => yScale(d.value))
-      .attr("width", xScale.bandwidth())
-      .attr("height", (d) => h - margin.bottom - yScale(d.value))
-      .attr("fill", "#47B747")
-      .attr("rx", 5)
-      .attr("ry", 5);
+    .selectAll("rect")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", (d) => xScale(d.category))
+    .attr("y", h - margin.bottom)
+    .attr("width", xScale.bandwidth())
+    .attr("height", 0)
+    .attr("fill", "#47B747")
+    .attr("rx", 5)
+    .attr("ry", 5)
+    .transition()
+    .duration(2000) 
+    .attr("y", (d) => yScale(d.value))
+    .attr("height", (d) => h - margin.bottom - yScale(d.value));  
   
     // Create x-axis
     const xAxis = d3.axisBottom(xScale);

@@ -11,11 +11,13 @@ const SideNav = () => {
     <div className="side-nav">
       <nav className="nav-bar">
         <div className="logo">
-         <a href="/"> <img src={logo}/></a>
+          <a href="/">
+            <img src={logo} />
+          </a>
         </div>
         <ul className="nav-list">
           <li className="lists">
-            <a href="/">
+            <a to="/">
               <div className="list-icons">
                 <BiSolidDashboard />
               </div>

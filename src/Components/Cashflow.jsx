@@ -40,11 +40,15 @@ const Cashflow = ({ data }) => {
       .attr("transform", (d) => `translate(${xScale(d.category)},0)`)
       .append("rect")
       .attr("x", 0)
-      .attr("y", (d) => yScale(d.inValue))
+      .attr("y", h - margin.bottom)
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => h - margin.bottom - yScale(d.inValue))
+      .attr("height", 0)
       .attr("fill", "#02bb78")
-      .attr("ry", 5);
+      .attr("ry", 5)
+      .transition()
+      .duration(2000) 
+      .attr("y", (d) => yScale(d.inValue))
+      .attr("height", (d) => h - margin.bottom - yScale(d.inValue));
 
     svg
       .selectAll(".combined-bar")
@@ -52,9 +56,13 @@ const Cashflow = ({ data }) => {
       .attr("x", 0)
       .attr("y", (d) => yScale(d.outValue))
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => h - margin.bottom - yScale(d.outValue))
+      .attr("height", 0)
       .attr("fill", "#47B747")
-      .attr("ry", 5);
+      .attr("ry", 5)
+      .transition()
+      .duration(2000) // Adjust the duration as needed
+      .attr("y", (d) => yScale(d.outValue))
+      .attr("height", (d) => h - margin.bottom - yScale(d.outValue));
 
     // Create x-axis
     const xAxis = d3.axisBottom(xScale);
@@ -76,6 +84,7 @@ const Cashflow = ({ data }) => {
     const yAxis = d3.axisLeft(yScale);
     svg.append("g").call(yAxis).select(".domain").remove();
   }, [data]);
+
   return (
     <div className="cashflow chart-container">
       <div className="cashflow-header">

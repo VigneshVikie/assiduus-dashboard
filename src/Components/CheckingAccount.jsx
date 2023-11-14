@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-const CheckingAccount = ({dataByMonth, setSelectedMonth, selectedMonth}) => {
+const CheckingAccount = ({ dataByMonth, setSelectedMonth, selectedMonth }) => {
   const svgRef = useRef();
-  const curveLineRef = useRef(null);
 
   useEffect(() => {
     // Setting svg
@@ -16,26 +15,22 @@ const CheckingAccount = ({dataByMonth, setSelectedMonth, selectedMonth}) => {
       .style("background", "#fff")
       .style("padding-right", "10px")
       .style("border-radius", "6px");
+
+    svg.selectAll("*").remove();
+
     // Setting scaling
     const xScale = d3
       .scaleLinear()
       .domain([0, dataByMonth.length - 1])
       .range([10, w]);
 
-      
-    const yScale = d3.scaleLinear()
-    .domain([-45, h]).range([h, 0]);
+    const yScale = d3.scaleLinear().domain([-45, h]).range([h, 0]);
 
     const generateScaledLine = d3
       .line()
       .x((d, i) => xScale(i))
       .y(yScale)
       .curve(d3.curveCardinal);
-    
-    // Remove the previous curve line
-    if (curveLineRef.current) {
-      curveLineRef.current.remove();
-    }
 
     // Setting axes
     const xAxis = d3
@@ -59,16 +54,24 @@ const CheckingAccount = ({dataByMonth, setSelectedMonth, selectedMonth}) => {
       .attr("color", "#99999a74");
 
     // Setting data for svg
-    const newCurveLine = svg
+    const path = svg
       .append("path")
       .attr("d", generateScaledLine(dataByMonth))
       .attr("class", "line")
       .attr("fill", "none")
       .attr("stroke", "#02BB7D")
-      .style("stroke-width", 2);
-    
-    // Store a reference to the new curve line
-    curveLineRef.current = newCurveLine;
+      .style("stroke-width", 2)
+      .attr("stroke-dasharray", function () {
+        const length = this.getTotalLength();
+        return `${length} ${length}`;
+      })
+      .attr("stroke-dashoffset", function () {
+        return this.getTotalLength();
+      })
+      .transition()
+      .duration(2000)
+      .ease(d3.easeLinear)
+      .attr("stroke-dashoffset", 0);
   }, [dataByMonth]);
 
   const handleMonthChange = (e) => {
