@@ -1,16 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-const Cashflow = () => {
-  const [data] = useState([
-    { category: "August", inValue: 30, outValue: 10 },
-    { category: "September", inValue: 60, outValue: 30 },
-    { category: "October", inValue: 90, outValue: 50 },
-    { category: "November", inValue: 60, outValue: 20 },
-    { category: "December", inValue: 50, outValue: 10 },
-    { category: "January", inValue: 100, outValue: 50 },
-  ]);
-
+const Cashflow = ({ data }) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -24,6 +15,9 @@ const Cashflow = () => {
       .style("background", "#fff")
       .style("padding-right", "10px")
       .style("border-radius", "6px");
+
+    // Clear existing bars and x-axis
+    svg.selectAll("*").remove();
 
     const xScale = d3
       .scaleBand()
@@ -41,14 +35,14 @@ const Cashflow = () => {
       .selectAll(".combined-bar")
       .data(data)
       .enter()
-      .append("g") 
+      .append("g")
       .attr("class", "combined-bar")
       .attr("transform", (d) => `translate(${xScale(d.category)},0)`)
       .append("rect")
       .attr("x", 0)
       .attr("y", (d) => yScale(d.inValue))
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => h - margin.bottom -yScale(d.inValue))
+      .attr("height", (d) => h - margin.bottom - yScale(d.inValue))
       .attr("fill", "#02bb78")
       .attr("ry", 5);
 

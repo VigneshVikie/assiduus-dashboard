@@ -1,29 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-const CheckingAccount = () => {
-  const [selectedMonth, setSelectedMonth] = useState("jan");
+const CheckingAccount = ({dataByMonth, setSelectedMonth, selectedMonth}) => {
   const svgRef = useRef();
   const curveLineRef = useRef(null);
-
-  const generateRandomData = () => {
-    return Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-  };
-
-  const dataByMonth = {
-    jan: [90, 120, 140, 70, 80, 120, 80, 80, 90, 120],
-    feb: generateRandomData(),
-    mar: generateRandomData(),
-    apr: generateRandomData(),
-    may: generateRandomData(),
-    jun: generateRandomData(),
-    jul: generateRandomData(),
-    aug: generateRandomData(),
-    sep: generateRandomData(),
-    oct: generateRandomData(),
-    nov: generateRandomData(),
-    dec: generateRandomData(),
-  };
 
   useEffect(() => {
     // Setting svg
@@ -39,7 +19,7 @@ const CheckingAccount = () => {
     // Setting scaling
     const xScale = d3
       .scaleLinear()
-      .domain([0, dataByMonth[selectedMonth].length - 1])
+      .domain([0, dataByMonth.length - 1])
       .range([10, w]);
 
       
@@ -60,7 +40,7 @@ const CheckingAccount = () => {
     // Setting axes
     const xAxis = d3
       .axisBottom(xScale)
-      .ticks(dataByMonth[selectedMonth].length)
+      .ticks(dataByMonth.length)
       .tickFormat((i) => i + 1);
     svg
       .append("g")
@@ -81,7 +61,7 @@ const CheckingAccount = () => {
     // Setting data for svg
     const newCurveLine = svg
       .append("path")
-      .attr("d", generateScaledLine(dataByMonth[selectedMonth]))
+      .attr("d", generateScaledLine(dataByMonth))
       .attr("class", "line")
       .attr("fill", "none")
       .attr("stroke", "#02BB7D")
@@ -89,10 +69,10 @@ const CheckingAccount = () => {
     
     // Store a reference to the new curve line
     curveLineRef.current = newCurveLine;
-  }, [selectedMonth]);
+  }, [dataByMonth]);
 
-  const handleMonthChange = (event) => {
-    setSelectedMonth(event.target.value);
+  const handleMonthChange = (e) => {
+    setSelectedMonth(e.target.value);
   };
 
   return (
