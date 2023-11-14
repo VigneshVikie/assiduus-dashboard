@@ -63,7 +63,7 @@ const Main = () => {
             <h2>Add your Invoice</h2>
             <input type="file" id="upload-btn"/>
             <label id="upload-btn-label" htmlFor="upload-btn">
-              Choose your Invoive to Upload
+              Click here to upload an New Invoice
             </label>
           </div>
         </div>

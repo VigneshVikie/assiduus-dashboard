@@ -102,7 +102,7 @@
 
       .search-box {
         all: unset;
-        font-size: 22px;
+        font-size: 16px;
         padding-right: 6px;
         height: 100%;
         width: 100%;
@@ -209,7 +209,7 @@
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   cursor: pointer;
   background-color: #e8eefd;
