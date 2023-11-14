@@ -9,6 +9,8 @@ import chartData from "../helper/chartData";
 const Main = () => {
   const [selectedMonth, setSelectedMonth] = useState("jan");
   const [manage, setManage] = useState("set1");
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const selectedData = chartData[selectedMonth];
   let dataByMonth = selectedData.checkingAccount;
 
@@ -21,6 +23,16 @@ const Main = () => {
   } else {
     dataByMonth = selectedData.checkingAccount;
   }
+
+  
+
+  const handleCLick = () => {
+    setModalOpen(!isModalOpen);
+    document.body.style.overflow = "auto";
+
+  };
+
+
   return (
     <div className="main">
       <MainNavbar />
@@ -32,10 +44,30 @@ const Main = () => {
           selectedData={selectedData}
           selectedMonth={selectedMonth}
         />
-        <Invoice data={selectedData.invoice} />
+        <Invoice
+          data={selectedData.invoice}
+          isModalOpen={isModalOpen}
+          setModalOpen={setModalOpen}
+        />
         <Cashflow data={selectedData.cashflow} />
         <Watchlist data={selectedData.watchlist} />
       </div>
+      {isModalOpen && (
+        <div className="invoice-modal" onClick={handleCLick}>
+          <div className="modal-body">
+            <button class="button" onClick={handleCLick}>
+              <span class="X"></span>
+              <span class="Y"></span>
+              <div class="close">Close</div>
+            </button>
+            <h2>Add your Invoice</h2>
+            <input type="file" id="upload-btn"/>
+            <label id="upload-btn-label" htmlFor="upload-btn">
+              Choose your Invoive to Upload
+            </label>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
